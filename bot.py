@@ -23,11 +23,11 @@ async def main(nama, email, c):
         page = await browser.new_page(viewport={'width': 720, 'height': 1280})
 
         # 1. Buka halaman website
-        print("Membuka halaman website...")
+        #print("Membuka halaman website...")
         await page.goto("https://virtual-expo.lkpp.go.id/visitor/register")
         
         # 2. Mengisi Form
-        print("Mengisi formulir...")
+        #print("Mengisi formulir...")
         await page.wait_for_timeout(2000)
         await page.fill("#profile_name", nama)
         await page.fill("#profile_email", email)
@@ -39,7 +39,7 @@ async def main(nama, email, c):
         await page.check("input.form-check-input")
 
         # 3. Regis
-        print("Mengeklik tombol submit...")
+        #print("Mengeklik tombol submit...")
         await page.click("button[type='submit']")
 
         await page.wait_for_timeout(5000)
@@ -50,11 +50,11 @@ async def main(nama, email, c):
         await page.wait_for_timeout(2000)
         
         # 4. Lewati Video
-        print("Lewati Selesai")
+        #print("Lewati Selesai")
         #Close banner
         await page.mouse.click(593, 530)
         await page.wait_for_timeout(2000)
-        print("Close banner selesai")
+        #print("Close banner selesai")
 
         # 5. Klik cookies
         await page.mouse.click(620, 1236)
@@ -63,7 +63,7 @@ async def main(nama, email, c):
         # 6. Masukk Hall
         await page.mouse.click(277, 654)
         await page.wait_for_timeout(2000)
-        print("Masuk Hall selesai")
+        #print("Masuk Hall selesai")
         
 
         # 7. Filter booth
@@ -89,6 +89,7 @@ async def main(nama, email, c):
 if __name__ == "__main__":
     jumlah = 500
     mulaiDari = 0
+    print("Mulai...")
     for i in range (mulaiDari, mulaiDari+jumlah):
         contact = contacts[i]        
         nama = contact["nama"]
