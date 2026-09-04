@@ -66,14 +66,14 @@ async def main(nama, email, c):
         await page.wait_for_timeout(1000)
         #await page.screenshot(path=f"{c}_5filter.png")
         await page.keyboard.type("UKPBJ KEMENTERIAN IM")
-        await page.wait_for_timeout(1000)
+        await page.wait_for_timeout(3000)
         #await page.screenshot(path=f"{c}_6booth.png")
         await page.keyboard.press("Enter")
-        await page.wait_for_timeout(2000)
+        await page.wait_for_timeout(1000)
         await page.keyboard.press("Enter")
         await page.wait_for_timeout(2000)
-        await page.keyboard.press("Enter")
-        await page.wait_for_timeout(2000)
+        #await page.mouse.click(357, 624) #video
+        #await page.mouse.click(170, 662) #poster
         await page.mouse.click(540, 662)
         await page.wait_for_timeout(2000)
         await page.mouse.click(540, 662)
@@ -85,7 +85,7 @@ async def main(nama, email, c):
         await browser.close()
 
 if __name__ == "__main__":
-    jumlah = 500
+    jumlah = 1
     mulaiDari = 0
     print("Mulai...")
     for i in range (mulaiDari, mulaiDari+jumlah):
